@@ -13,7 +13,7 @@
 # 双击 index.html 即可
 
 # 方式二：本地服务器（推荐，便于手机同网访问）
-cd E:/homework/11
+cd E:/homework/第一个
 python -m http.server 8000
 # 浏览器打开 http://127.0.0.1:8000
 ```
