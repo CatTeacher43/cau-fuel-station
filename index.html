@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="农大运动食补站：根据运动类型、目标与忌口，从中国农业大学东西校区食堂里配出适合训练后吃的晚餐。">
+  <meta name="theme-color" content="#f4efe3">
+  <title>农大运动食补站 · 练完这一顿，别让努力白费</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230d3b2a'/%3E%3Cpath d='M10.5 23.5h27c0 8.2-5.8 14.2-13.5 14.2s-13.5-6-13.5-14.2Z' fill='none' stroke='%23d8e78e' stroke-width='2.8' stroke-linejoin='round'/%3E%3Cpath d='M7 23.5h34' stroke='%23d8e78e' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <defs>
+      <symbol id="i-logo" viewBox="0 0 48 48">
+        <path d="M10.5 23.5h27c0 8.2-5.8 14.2-13.5 14.2s-13.5-6-13.5-14.2Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+        <path d="M7 23.5h34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M24 19.5c0-5.7 3.4-9.1 9-10.1-.8 5.8-3.8 9.3-9 10.1Z" fill="currentColor"/>
+        <path d="M23.5 19.6c-4.1 0-7.1-2-8.4-6.1 4.4.2 7.3 2.4 8.4 6.1Z" fill="currentColor" opacity=".62"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4 12h15M14 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path d="M12 20.4S3.7 15.5 3.7 9.5a4.7 4.7 0 0 1 8.3-3 4.7 4.7 0 0 1 8.3 3c0 6-8.3 10.9-8.3 10.9Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-run" viewBox="0 0 24 24">
+        <circle cx="15.2" cy="4.8" r="2.1" fill="currentColor"/>
+        <path d="M13.7 9 9 11.8l3 3-2.6 5.1M9 11.8 4.2 13M12 14.8l5 2 2.2 4.1M9.4 19.9l-3.1 1.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-dumbbell" viewBox="0 0 24 24">
+        <path d="M7 8.5v7M3.8 10v4M17 8.5v7M20.2 10v4M7 12h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+        <path d="M4.8 8.8v6.4M19.2 8.8v6.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".35"/>
+      </symbol>
+      <symbol id="i-ball" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M4.2 9.2c3.4.9 5.2 2.9 6.2 6.1M19.8 9.2c-3.4.9-5.2 2.9-6.2 6.1M12 3.6c-1 4.1-1 7.3 0 16.8M3.6 12c5.1-1 11.7-1 16.8 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24">
+        <path d="M19.5 4.2C11.7 4.2 5.4 8 5.4 15c0 2 .9 3.6 2.4 4.6 6.5-.4 11.7-6.4 11.7-15.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M5.4 20.4c1.6-5.9 5.4-9.5 10.9-12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-walk" viewBox="0 0 24 24">
+        <circle cx="14.4" cy="4.7" r="2" fill="currentColor"/>
+        <path d="M13 9.2 9.8 12l2.5 2.7-1 5.3M9.8 12 5.5 13.4M12.3 14.7l3.6 1.4 2.4 4.1M11.2 20l-3 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24">
+        <path d="M12 4v16M6 6h12M4 17h4M16 17h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M4 17c0-2.4 1.4-4.2 3.2-4.2s3.2 1.8 3.2 4.2H4ZM13.6 17c0-2.4 1.4-4.2 3.2-4.2s3.2 1.8 3.2 4.2h-6.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24">
+        <path d="M13.7 2.8 5.4 13.2h5.2l-.5 8 8.5-10.7h-5.4l.5-7.7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 7.6V12l3.1 1.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M19 10.2c0 5-7 11-7 11s-7-6-7-11a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="12" cy="10.1" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path d="M12 2.8c.6 5.1 3.1 7.6 8.2 8.2-5.1.6-7.6 3.1-8.2 8.2-.6-5.1-3.1-7.6-8.2-8.2 5.1-.6 7.6-3.1 8.2-8.2Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M19.5 8.4A8 8 0 1 0 20 15M19.5 4v4.4H15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-warning" viewBox="0 0 24 24">
+        <path d="M12 3.8 21 20H3L12 3.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M12 9.2v4.6M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M12 10.6v5.2M12 7.4v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="m5.5 12.5 4.2 4.1 8.8-9.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-bowl" viewBox="0 0 24 24">
+        <path d="M4.4 10.3h15.2c0 5-3.3 8.2-7.6 8.2s-7.6-3.2-7.6-8.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M2.8 10.3h18.4M9 7.1c0-2 1.3-3.4 3-3.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="农大运动食补站首页">
+        <span class="brand-mark"><svg><use href="#i-logo"></use></svg></span>
+        <span class="brand-type">
+          <strong>农大运动食补站</strong>
+          <small>CAU FUEL STATION</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="主导航">
+        <a class="is-active" href="#planner">今晚推荐</a>
+        <a href="#guide">补给指南</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="live-status" aria-label="当前营业状态">
+          <span class="live-dot"></span>
+          <span id="live-status-text">正在读取档口状态</span>
+        </div>
+        <button class="saved-trigger" id="favorites-trigger" type="button" aria-haspopup="dialog">
+          <svg class="icon"><use href="#i-heart"></use></svg>
+          <span>收藏</span>
+          <span class="saved-count" id="favorites-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero page-shell">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          CAU SPORTS DINNER · 东 / 西校区
+        </div>
+        <h1>练完这一顿，<br><span class="hero-highlight">别让努力白费。</span></h1>
+        <p class="hero-lede">
+          按运动量、健身目标和忌口，从农大食堂里配一套<strong>真正适合训练后吃</strong>的晚餐。不用精算到每一克，30 秒就能做决定。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#planner">
+            开始配餐
+            <span class="link-arrow"><svg><use href="#i-arrow"></use></svg></span>
+          </a>
+          <span class="hero-note">无需注册 · 可收藏 · 以当前营业状态排序</span>
+        </div>
+        <div class="hero-stats" aria-label="产品数据">
+          <div><strong>11</strong><span>个食堂 / 餐区</span></div>
+          <div><strong>70<span class="plus">+</span></strong><span>道常见菜品</span></div>
+          <div><strong>30<span class="unit">s</span></strong><span>平均决定时间</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="运动晚餐通行证示意">
+        <div class="track-ring track-ring-a"></div>
+        <div class="track-ring track-ring-b"></div>
+        <div class="art-label art-label-top">EAT WELL<br>TRAIN HARD</div>
+
+        <article class="dinner-pass">
+          <div class="pass-head">
+            <span>CAU · DINNER PASS</span>
+            <span>NO. 001</span>
+          </div>
+
+          <div class="pass-plate">
+            <svg viewBox="0 0 320 240" role="img" aria-label="一盘有鸡肉、西兰花、番茄和杂粮饭的运动晚餐">
+              <ellipse cx="160" cy="204" rx="101" ry="13" fill="#0d3b2a" opacity=".12"/>
+              <circle cx="160" cy="113" r="94" fill="#fbf7ec" stroke="#0d3b2a" stroke-width="2.4"/>
+              <circle cx="160" cy="113" r="81" fill="#f1e9d7"/>
+              <path d="M93 110c3-23 23-39 47-37 9-16 31-20 45-7 17-5 35 6 40 24 4 30-15 55-47 58-42 4-72-8-85-38Z" fill="#eee0bf"/>
+              <g fill="#d9c69c">
+                <circle cx="109" cy="105" r="2.2"/><circle cx="121" cy="92" r="1.8"/><circle cx="135" cy="103" r="2.1"/>
+                <circle cx="117" cy="118" r="1.7"/><circle cx="144" cy="87" r="1.7"/><circle cx="150" cy="112" r="2"/>
+                <circle cx="101" cy="118" r="1.6"/><circle cx="128" cy="119" r="1.5"/>
+              </g>
+              <g>
+                <path d="M173 78c13-7 31-3 38 8 8 13 2 29-11 36-14 7-31 1-37-12-6-12 0-25 10-32Z" fill="#e77855" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="M179 88c8-4 18-2 23 5 5 8 1 17-6 21-9 4-19 0-22-7-4-7-1-15 5-19Z" fill="#f39b79"/>
+                <path d="M184 90c4-1 8 0 10 3" fill="none" stroke="#ffd4bd" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M207 116c11-3 21 5 20 16-1 10-10 17-19 14-10-3-14-12-10-20 2-4 5-8 9-10Z" fill="#e77855" stroke="#0d3b2a" stroke-width="2"/>
+              </g>
+              <g>
+                <path d="M128 61c8-8 20-8 26-2 7 7 5 18-2 24-8 6-20 4-25-4-4-7-3-13 1-18Z" fill="#2d7651" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="M153 58c8-7 20-4 23 4 4 8-1 17-9 20-9 3-18-3-19-11-1-5 1-9 5-13Z" fill="#3e8f63" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="M138 67c2-5 6-8 10-8M158 65c1-4 4-7 7-8" fill="none" stroke="#9cc58c" stroke-width="2.3" stroke-linecap="round"/>
+              </g>
+              <g>
+                <circle cx="216" cy="84" r="13" fill="#e2543d" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="m211 79 5-4 5 4" fill="none" stroke="#7aa867" stroke-width="2.4" stroke-linecap="round"/>
+                <circle cx="99" cy="77" r="10" fill="#e2543d" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="M95 73c3-3 6-3 8-1" fill="none" stroke="#f3b09d" stroke-width="2" stroke-linecap="round"/>
+              </g>
+              <g fill="#efc44e">
+                <circle cx="220" cy="138" r="4"/><circle cx="230" cy="130" r="3.4"/><circle cx="213" cy="148" r="3.2"/>
+                <circle cx="231" cy="145" r="3"/><circle cx="223" cy="155" r="2.7"/>
+              </g>
+              <g>
+                <path d="M95 139c9-4 18 0 21 8 2 8-4 15-12 14-9-1-15-8-13-15 1-3 2-5 4-7Z" fill="#d6df79" stroke="#0d3b2a" stroke-width="2"/>
+                <path d="M103 143c3-1 6 0 8 2M99 151c3 1 6 0 8-2" fill="none" stroke="#f3f1c3" stroke-width="2" stroke-linecap="round"/>
+              </g>
+              <g fill="none" stroke="#0d3b2a" stroke-width="2.1" stroke-linecap="round">
+                <path d="M44 82c6 3 10 7 13 14M276 82c-6 3-10 7-13 14"/>
+                <path d="M39 170c9-2 15 0 20 6M281 170c-9-2-15 0-20 6"/>
+              </g>
+            </svg>
+            <span class="plate-stamp">配平<br><small>BALANCED</small></span>
+          </div>
+
+          <div class="pass-meta">
+            <div><span>今晚目标</span><strong id="hero-goal-label">增肌</strong></div>
+            <div><span>建议蛋白</span><strong id="hero-protein-label">39g+</strong></div>
+            <div><span>建议碳水</span><strong id="hero-carbs-label">85g+</strong></div>
+          </div>
+          <div class="pass-foot">
+            <span><i></i> 以你的训练强度估算</span>
+            <span>CAU / 2026</span>
+          </div>
+        </article>
+
+        <span class="floating-tag tag-protein">高蛋白</span>
+        <span class="floating-tag tag-light">少油一点</span>
+        <span class="floating-note"><svg><use href="#i-clock"></use></svg> 练后 2 小时内吃上</span>
+      </div>
+    </section>
+
+    <section class="planner page-shell" id="planner">
+      <form class="panel form-panel" id="dinner-form" novalidate>
+        <div class="panel-heading">
+          <div>
+            <span class="section-kicker">01 / 你的训练</span>
+            <h2>今晚，身体需要什么？</h2>
+          </div>
+          <span class="time-chip"><svg><use href="#i-clock"></use></svg> 约 30 秒</span>
+        </div>
+
+        <div class="form-fields">
+          <fieldset class="field">
+            <legend>在哪个校区？</legend>
+            <div class="campus-grid" role="group" aria-label="选择校区">
+              <button class="campus-option is-active" type="button" data-group="campus" data-value="east" aria-pressed="true">
+                <span class="campus-icon"><svg><use href="#i-pin"></use></svg></span>
+                <span class="campus-copy"><strong>东校区</strong><small>公主楼 · 研楼 · 王子楼</small></span>
+                <span class="campus-count">6 个餐区</span>
+              </button>
+              <button class="campus-option" type="button" data-group="campus" data-value="west" aria-pressed="false">
+                <span class="campus-icon"><svg><use href="#i-pin"></use></svg></span>
+                <span class="campus-copy"><strong>西校区</strong><small>颐园 · 西区民族风味</small></span>
+                <span class="campus-count">5 个餐区</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>你的目标</legend>
+            <div class="choice-grid goal-grid" role="group" aria-label="选择健身目标">
+              <button class="choice-card" type="button" data-group="goal" data-value="cut" aria-pressed="false">
+                <span class="choice-icon"><svg><use href="#i-leaf"></use></svg></span>
+                <span class="choice-copy"><strong>减脂</strong><small>控油，保住蛋白</small></span>
+                <span class="choice-check"><svg><use href="#i-check"></use></svg></span>
+              </button>
+              <button class="choice-card is-active" type="button" data-group="goal" data-value="gain" aria-pressed="true">
+                <span class="choice-icon"><svg><use href="#i-dumbbell"></use></svg></span>
+                <span class="choice-copy"><strong>增肌</strong><small>足量蛋白，补碳水</small></span>
+                <span class="choice-check"><svg><use href="#i-check"></use></svg></span>
+              </button>
+              <button class="choice-card" type="button" data-group="goal" data-value="maintain" aria-pressed="false">
+                <span class="choice-icon"><svg><use href="#i-scale"></use></svg></span>
+                <span class="choice-copy"><strong>维持体重</strong><small>均衡，不过量</small></span>
+                <span class="choice-check"><svg><use href="#i-check"></use></svg></span>
+              </button>
+              <button class="choice-card" type="button" data-group="goal" data-value="recover" aria-pressed="false">
+                <span class="choice-icon"><svg><use href="#i-bolt"></use></svg></span>
+                <span class="choice-copy"><strong>恢复体力</strong><small>碳水优先，补水</small></span>
+                <span class="choice-check"><svg><use href="#i-check"></use></svg></span>
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>刚做了什么运动？</legend>
+            <div class="exercise-grid" role="group" aria-label="选择运动类型">
+              <button class="exercise-option" type="button" data-group="exercise" data-value="cardio" aria-pressed="false">
+                <span class="exercise-icon"><svg><use href="#i-run"></use></svg></span>
+                <span><strong>有氧</strong><small>跑步 / 跳绳</small></span>
+              </button>
+              <button class="exercise-option is-active" type="button" data-group="exercise" data-value="strength" aria-pressed="true">
+                <span class="exercise-icon"><svg><use href="#i-dumbbell"></use></svg></span>
+                <span><strong>力量</strong><small>器械 / 自重</small></span>
+              </button>
+              <button class="exercise-option" type="button" data-group="exercise" data-value="ball" aria-pressed="false">
+                <span class="exercise-icon"><svg><use href="#i-ball"></use></svg></span>
+                <span><strong>球类</strong><small>篮球 / 羽毛球</small></span>
+              </button>
+              <button class="exercise-option" type="button" data-group="exercise" data-value="light" aria-pressed="false">
+                <span class="exercise-icon"><svg><use href="#i-walk"></use></svg></span>
+                <span><strong>轻活动</strong><small>散步 / 拉伸</small></span>
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>练了多久？</legend>
+            <div class="segment" role="group" aria-label="选择运动时长">
+              <button type="button" data-group="duration" data-value="short" aria-pressed="false">30 分钟以内</button>
+              <button class="is-active" type="button" data-group="duration" data-value="mid" aria-pressed="true">30–60 分钟</button>
+              <button type="button" data-group="duration" data-value="long" aria-pressed="false">60 分钟以上</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>忌口 / 过敏 <span class="legend-hint">可多选</span></legend>
+            <div class="chip-wrap" role="group" aria-label="选择忌口和过敏项">
+              <button class="chip is-active" type="button" data-group="restriction" data-value="none" aria-pressed="true">无忌口</button>
+              <button class="chip" type="button" data-group="restriction" data-value="spicy" aria-pressed="false">不吃辣</button>
+              <button class="chip" type="button" data-group="restriction" data-value="vegetarian" aria-pressed="false">素食（蛋奶可）</button>
+              <button class="chip" type="button" data-group="restriction" data-value="beef" aria-pressed="false">不吃牛</button>
+              <button class="chip" type="button" data-group="restriction" data-value="lamb" aria-pressed="false">不吃羊</button>
+              <button class="chip" type="button" data-group="restriction" data-value="pork" aria-pressed="false">不吃猪肉</button>
+              <button class="chip" type="button" data-group="restriction" data-value="seafood" aria-pressed="false">海鲜过敏</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>今晚的口味</legend>
+            <div class="chip-wrap" role="group" aria-label="选择口味偏好">
+              <button class="chip" type="button" data-group="taste" data-value="light" aria-pressed="false">少油清淡</button>
+              <button class="chip is-active" type="button" data-group="taste" data-value="normal" aria-pressed="true">正常口味</button>
+              <button class="chip" type="button" data-group="taste" data-value="noodles" aria-pressed="false">想吃面食</button>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-submit">
+          <button class="primary-button" id="generate-button" type="submit">
+            <span class="button-label">生成我的晚餐方案</span>
+            <span class="button-arrow"><svg><use href="#i-arrow"></use></svg></span>
+          </button>
+          <p class="form-hint" id="form-hint">
+            <svg><use href="#i-info"></use></svg>
+            已按常见情况预填，直接生成也 OK。
+          </p>
+        </div>
+      </form>
+
+      <section class="panel results-panel" id="results" aria-live="polite" aria-busy="false">
+        <div class="results-empty" id="results-empty">
+          <div class="empty-visual" aria-hidden="true">
+            <span class="empty-ring ring-one"></span>
+            <span class="empty-ring ring-two"></span>
+            <span class="empty-plate">
+              <svg><use href="#i-bowl"></use></svg>
+            </span>
+            <span class="empty-spark spark-a"><svg><use href="#i-spark"></use></svg></span>
+            <span class="empty-spark spark-b"><svg><use href="#i-spark"></use></svg></span>
+          </div>
+          <span class="section-kicker">02 / 今晚的盘子</span>
+          <h2>你的晚餐方案，<br>会落在这里。</h2>
+          <p class="empty-copy">我们会同时考虑现在是否供餐、训练后的营养缺口、你的忌口，以及食堂里最容易吃到的搭配。</p>
+          <div class="logic-list">
+            <div><span>01</span><strong>先看营业状态</strong><small>不让推荐落空</small></div>
+            <div><span>02</span><strong>再配蛋白与碳水</strong><small>跟着训练目标走</small></div>
+            <div><span>03</span><strong>最后过滤忌口</strong><small>避开辣、牛羊肉与海鲜</small></div>
+          </div>
+          <p class="empty-note"><svg><use href="#i-pin"></use></svg> 目前覆盖东、西校区 11 个食堂 / 餐区</p>
+        </div>
+
+        <div class="results-output" id="results-output" hidden></div>
+      </section>
+    </section>
+
+    <section class="guide page-shell" id="guide">
+      <div class="guide-heading">
+        <div>
+          <span class="section-kicker">03 / 补给站小课堂</span>
+          <h2>不靠玄学，<br>按身体的需要吃。</h2>
+        </div>
+        <p>运动后的晚餐不需要变成一道数学题。先把时机、份量和蛋白吃对，剩下的交给食堂。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <span class="guide-number">01</span>
+          <span class="guide-icon"><svg><use href="#i-clock"></use></svg></span>
+          <h3>先补水，<br>再吃饭</h3>
+          <p>出汗多时，训练后先补 300–500ml 水。食堂的汤和酸奶也能顺带补一点，但别用含糖饮料代替水。</p>
+        </article>
+        <article class="guide-card">
+          <span class="guide-number">02</span>
+          <span class="guide-icon"><svg><use href="#i-bowl"></use></svg></span>
+          <h3>碳水不是<br>敌人</h3>
+          <p>尤其是跑步、球类和高强度力量训练后，主食能帮身体把训练消耗补回来。减脂期也别把主食全砍掉。</p>
+        </article>
+        <article class="guide-card">
+          <span class="guide-number">03</span>
+          <span class="guide-icon"><svg><use href="#i-dumbbell"></use></svg></span>
+          <h3>蛋白要<br>分次吃</h3>
+          <p>一餐吃到一掌大小的肉、鱼、蛋或豆制品就很好。比起睡前猛补，训练后这一顿更值得认真吃。</p>
+        </article>
+      </div>
+      <p class="guide-footnote"><svg><use href="#i-info"></use></svg> 以上为一般性运动营养建议，不替代专业医疗或营养咨询。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer page-shell">
+    <div class="footer-brand">
+      <span class="brand-mark"><svg><use href="#i-logo"></use></svg></span>
+      <div><strong>农大运动食补站</strong><small>练完这一顿，别让努力白费。</small></div>
+    </div>
+    <p class="footer-disclaimer">
+      食堂名称与营业时段参考中国农业大学公开餐饮资料整理；菜品供应、价格与时段可能调整，请以现场为准。营养数值按常见份量估算，仅供选餐参考。
+    </p>
+    <span class="footer-mark">CAU FUEL STATION · 2026</span>
+  </footer>
+
+  <div class="drawer-overlay" id="drawer-overlay" hidden></div>
+  <aside class="favorites-drawer" id="favorites-drawer" role="dialog" aria-modal="true" aria-labelledby="favorites-title" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <span class="section-kicker">SAVED / 本机</span>
+        <h2 id="favorites-title">我的收藏</h2>
+      </div>
+      <button class="icon-button" id="favorites-close" type="button" aria-label="关闭收藏夹">
+        <svg><use href="#i-close"></use></svg>
+      </button>
+    </div>
+    <div class="favorites-list" id="favorites-list"></div>
+    <p class="drawer-foot"><svg><use href="#i-info"></use></svg> 收藏保存在当前浏览器，不会上传到服务器。</p>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/engine.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
